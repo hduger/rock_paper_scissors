@@ -1,0 +1,18 @@
+<script>
+    // This function picks a random number between 1 and 3
+    //and it assigns rock, paper, or scissors based on the number
+    function computerPlay() {
+        let randNum = Math.floor(Math.random() * 3) + 1;
+        if (randNum === 3){
+            return 'Rock';
+        } else if (randNum === 2) {
+            return 'Paper';
+        } else {
+            return "Scissors";
+        }
+    }
+
+    computerPlay();
+    
+
+</script>
