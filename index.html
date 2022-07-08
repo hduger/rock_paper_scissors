@@ -1,8 +1,14 @@
 <script>
     //Global Variables
-    const playerSelection = prompt("Choose rock, paper, or scissors", "");
-    const computerSelection = computerPlay();
+
+        let playerCount = 0;
+        let compCount = 0;
+        let tieCount = 0;
     
+    function playerSelect() {
+        let input = prompt("Choose rock, paper, or scissors", "").toLocaleLowerCase();
+        return input;
+    }
     
     // This function picks a random number between 1 and 3
     //and it assigns rock, paper, or scissors based on the number
@@ -18,40 +24,52 @@
     }
 
 
-    function playRound(playerSelection, computerSelection) {
-        let playerGuess = playerSelection.toLowerCase();
-        let computerGuess = computerSelection;
-
-        if (playerGuess==="rock" && computerGuess==="Scissors") {
+    function playRound() {
+        const playerSelection = playerSelect();
+        const computerSelection = computerPlay();
+        if (playerSelection==="rock" && computerSelection==="Scissors") {
+            playerCount++;
             return "You win! Rock beats Scissors!";
-        } else if (playerGuess==="rock" && computerGuess === "Paper") {
+        } else if (playerSelection==="rock" && computerSelection === "Paper") {
+            compCount++;
             return "You Lose! Paper beats Rock!";
-        } else if (playerGuess==="rock" && computerGuess==="Rock") {
+        } else if (playerSelection==="rock" && computerSelection==="Rock") {
+            tieCount++;
             return "Tie!";
         }
         
-        if (playerGuess==="paper" && computerGuess==="Scissors") {
+        if (playerSelection==="paper" && computerSelection==="Scissors") {
+            compCount++;
             return "You Lose! Scissors beats paper!";
-        } else if (playerGuess==="paper" && computerGuess === "Paper") {
+        } else if (playerSelection==="paper" && computerSelection === "Paper") {
+            tieCount++;
             return "Tie";
-        } else if (playerGuess==="paper" && computerGuess==="Rock") {
+        } else if (playerSelection==="paper" && computerSelection==="Rock") {
+            playerCount++;
             return "You Win! Paper beats Rock!!";
         }
 
-        if (playerGuess==="scissors" && computerGuess==="Scissors") {
+        if (playerSelection==="scissors" && computerSelection==="Scissors") {
+            tieCount++;
             return "Tie!";
-        } else if (playerGuess==="scissors" && computerGuess === "Paper") {
+        } else if (playerSelection==="scissors" && computerSelection === "Paper") {
+            playerCount++;
             return "You Win! Scissors beats paper!";
-        } else if (playerGuess==="scissors" && computerGuess==="Rock") {
+        } else if (playerSelection==="scissors" && computerSelection==="Rock") {
+            compCount++;
             return "You Lose! Rock beats Scissors!";
         }
+
     }
+
 
     function game() {
-        for (let i = 1; i <=5; i++) {
-            
+        for (let i = 0; i < 5; i++) {
+            console.log(playRound());
+        
         }
+        
     }
-
-
+    game();
+    console.log(playerCount, compCount, tieCount);
 </script>
