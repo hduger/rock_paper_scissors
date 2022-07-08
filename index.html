@@ -1,18 +1,57 @@
 <script>
+    //Global Variables
+    const playerSelection = prompt("Choose rock, paper, or scissors", "");
+    const computerSelection = computerPlay();
+    
+    
     // This function picks a random number between 1 and 3
     //and it assigns rock, paper, or scissors based on the number
     function computerPlay() {
         let randNum = Math.floor(Math.random() * 3) + 1;
         if (randNum === 3){
-            return 'Rock';
+            return "Rock";
         } else if (randNum === 2) {
-            return 'Paper';
+            return "Paper";
         } else {
             return "Scissors";
         }
     }
 
-    computerPlay();
-    
+
+    function playRound(playerSelection, computerSelection) {
+        let playerGuess = playerSelection.toLowerCase();
+        let computerGuess = computerSelection;
+
+        if (playerGuess==="rock" && computerGuess==="Scissors") {
+            return "You win! Rock beats Scissors!";
+        } else if (playerGuess==="rock" && computerGuess === "Paper") {
+            return "You Lose! Paper beats Rock!";
+        } else if (playerGuess==="rock" && computerGuess==="Rock") {
+            return "Tie!";
+        }
+        
+        if (playerGuess==="paper" && computerGuess==="Scissors") {
+            return "You Lose! Scissors beats paper!";
+        } else if (playerGuess==="paper" && computerGuess === "Paper") {
+            return "Tie";
+        } else if (playerGuess==="paper" && computerGuess==="Rock") {
+            return "You Win! Paper beats Rock!!";
+        }
+
+        if (playerGuess==="scissors" && computerGuess==="Scissors") {
+            return "Tie!";
+        } else if (playerGuess==="scissors" && computerGuess === "Paper") {
+            return "You Win! Scissors beats paper!";
+        } else if (playerGuess==="scissors" && computerGuess==="Rock") {
+            return "You Lose! Rock beats Scissors!";
+        }
+    }
+
+    function game() {
+        for (let i = 1; i <=5; i++) {
+            
+        }
+    }
+
 
 </script>
