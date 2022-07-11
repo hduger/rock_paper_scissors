@@ -35,7 +35,8 @@ button {
 }
 
 .players {
-    color: white;
+    color: lightgrey;
+    text-shadow: 4px 4px 6px rgb(132, 130, 241);
     font-size: 48px;
     display: flex;
     flex-direction: row;
