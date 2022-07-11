@@ -20,13 +20,29 @@ button {
     cursor: pointer;
     font-size: 48px;
     min-width: 75px;
+    background-color: rgb(255, 244, 228);
+    box-shadow: 4px 4px 4px rgb(255, 253, 152);
 }
+
 .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-right: auto;
     margin-left: auto;
     margin-top: 3rem;
     gap: 4rem;
 
+}
+
+.players {
+    color: white;
+    font-size: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    gap: 10rem;
 }
