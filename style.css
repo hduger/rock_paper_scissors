@@ -4,7 +4,9 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -12,4 +14,19 @@ body {
     align-items: center;
     color: lightgrey;
     text-shadow: 4px 4px 6px rgb(132, 130, 241);
+}
+
+button {
+    cursor: pointer;
+    font-size: 48px;
+    min-width: 75px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3rem;
+    gap: 4rem;
+
 }

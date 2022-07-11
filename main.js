@@ -62,20 +62,20 @@ if (playerSelection==="scissors" && computerSelection==="Scissors") {
 }
 
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound());
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         console.log(playRound());
 
-    }
+//     }
 
-}
-game();
+// }
+// game();
 
-if (playerCount > compCount) {
-    console.log("You have beaten the computer!");
-} else if (compCount > playerCount) {
-    consol.log("The computer has won!");
-} else { 
-    console.log("It is a tie!");
-}
-console.log(playerCount, compCount, tieCount);
+// if (playerCount > compCount) {
+//     console.log("You have beaten the computer!");
+// } else if (compCount > playerCount) {
+//     consol.log("The computer has won!");
+// } else { 
+//     console.log("It is a tie!");
+// }
+// console.log(playerCount, compCount, tieCount);
