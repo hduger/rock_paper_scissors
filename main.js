@@ -5,8 +5,15 @@ let compCount = 0;
 let tieCount = 0;
 
 function playerSelect() {
-let input = prompt("Choose rock, paper, or scissors", "").toLocaleLowerCase();
-return input;
+// let input = prompt("Choose rock, paper, or scissors", "").toLocaleLowerCase();
+const rock = document.getElementById('#rockButton');
+rock.onclick = () => alert("Hello World");
+const paper = document.getElementById('#paperButton');
+paper.onclick = () => alert("I am paper");
+const scissors = document.getElementById('#scissorsButton');
+scissors.onclick = () => alert("I am scissors");
+console.log(rock);
+// return input;
 }
 
 // This function picks a random number between 1 and 3
@@ -24,52 +31,52 @@ if (randNum === 3){
 
 
 function playRound() {
-const playerSelection = playerSelect();
-const computerSelection = computerPlay();
-if (playerSelection==="rock" && computerSelection==="Scissors") {
-    playerCount++;
-    return "You win! Rock beats Scissors!";
-} else if (playerSelection==="rock" && computerSelection === "Paper") {
-    compCount++;
-    return "You Lose! Paper beats Rock!";
-} else if (playerSelection==="rock" && computerSelection==="Rock") {
-    tieCount++;
-    return "Tie!";
+    const playerSelection = playerSelect();
+    const computerSelection = computerPlay();
+        if (playerSelection==="rock" && computerSelection==="Scissors") {
+            playerCount++;
+            return "You win! Rock beats Scissors!";
+        } else if (playerSelection==="rock" && computerSelection === "Paper") {
+            compCount++;
+            return "You Lose! Paper beats Rock!";
+        } else if (playerSelection==="rock" && computerSelection==="Rock") {
+            tieCount++;
+            return "Tie!";
+        }
+
+        if (playerSelection==="paper" && computerSelection==="Scissors") {
+            compCount++;
+            return "You Lose! Scissors beats paper!";
+        } else if (playerSelection==="paper" && computerSelection === "Paper") {
+            tieCount++;
+            return "Tie";
+        } else if (playerSelection==="paper" && computerSelection==="Rock") {
+            playerCount++;
+            return "You Win! Paper beats Rock!!";
+        }
+
+        if (playerSelection==="scissors" && computerSelection==="Scissors") {
+            tieCount++;
+            return "Tie!";
+        } else if (playerSelection==="scissors" && computerSelection === "Paper") {
+            playerCount++;
+            return "You Win! Scissors beats paper!";
+        } else if (playerSelection==="scissors" && computerSelection==="Rock") {
+            compCount++;
+            return "You Lose! Rock beats Scissors!";
+        }
+
 }
 
-if (playerSelection==="paper" && computerSelection==="Scissors") {
-    compCount++;
-    return "You Lose! Scissors beats paper!";
-} else if (playerSelection==="paper" && computerSelection === "Paper") {
-    tieCount++;
-    return "Tie";
-} else if (playerSelection==="paper" && computerSelection==="Rock") {
-    playerCount++;
-    return "You Win! Paper beats Rock!!";
-}
 
-if (playerSelection==="scissors" && computerSelection==="Scissors") {
-    tieCount++;
-    return "Tie!";
-} else if (playerSelection==="scissors" && computerSelection === "Paper") {
-    playerCount++;
-    return "You Win! Scissors beats paper!";
-} else if (playerSelection==="scissors" && computerSelection==="Rock") {
-    compCount++;
-    return "You Lose! Rock beats Scissors!";
-}
+function game() {
+    for (let i = 0; i < 5; i++) {
+        console.log(playRound());
+
+    }
 
 }
-
-
-// function game() {
-//     for (let i = 0; i < 5; i++) {
-//         console.log(playRound());
-
-//     }
-
-// }
-// game();
+game();
 
 // if (playerCount > compCount) {
 //     console.log("You have beaten the computer!");
