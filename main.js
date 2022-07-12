@@ -3,36 +3,62 @@
 let playerCount = 0;
 let compCount = 0;
 let tieCount = 0;
+let playerSelection;
+let computerSelection;
 
-function playerSelect() {
-// let input = prompt("Choose rock, paper, or scissors", "").toLocaleLowerCase();
 const rock = document.getElementById('#rockButton');
-rock.onclick = () => alert("Hello World");
+rock.addEventListener("click", () => {
+    playerSelection = 'rock';
+    console.log(playerSelection);
+    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+});
 const paper = document.getElementById('#paperButton');
-paper.onclick = () => alert("I am paper");
+paper.addEventListener("click", () => {
+    playerSelection = 'paper';
+    console.log(playerSelection);
+    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+});
 const scissors = document.getElementById('#scissorsButton');
-scissors.onclick = () => alert("I am scissors");
-console.log(rock);
-// return input;
-}
+scissors.addEventListener("click", () => {
+    playerSelection = 'scissors';
+    console.log(playerSelection);
+    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+});
+    
+
+// function playerSelect() {
+// // let input = prompt("Choose rock, paper, or scissors", "").toLocaleLowerCase();
+//     let playerSelection;
+
+//     const rock = document.getElementById('#rockButton');
+//     rock.onclick = () => playerSelection = 'rock';
+//     const paper = document.getElementById('#paperButton');
+//     paper.onclick = () => playerSelection = 'paper';
+//     const scissors = document.getElementById('#scissorsButton');
+//     scissors.onclick = () => playerSelection = 'scissors';
+//     return playerSelection
+// }
 
 // This function picks a random number between 1 and 3
 //and it assigns rock, paper, or scissors based on the number
 function computerPlay() {
-let randNum = Math.floor(Math.random() * 3) + 1;
-if (randNum === 3){
-    return "Rock";
-} else if (randNum === 2) {
-    return "Paper";
-} else {
-    return "Scissors";
-}
+    let randNum = Math.floor(Math.random() * 3) + 1;
+    if (randNum === 3){
+        return "Rock";
+    } else if (randNum === 2) {
+        return "Paper";
+    } else {
+        return "Scissors";
+    }
 }
 
 
-function playRound() {
-    const playerSelection = playerSelect();
-    const computerSelection = computerPlay();
+function playRound(playerSelection, computerSelection) {
+    playerSelection = playerSelection;
+    computerSelection = computerPlay();
         if (playerSelection==="rock" && computerSelection==="Scissors") {
             playerCount++;
             return "You win! Rock beats Scissors!";
@@ -69,14 +95,13 @@ function playRound() {
 }
 
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        console.log(playRound());
+// function game() {
+//     for (let i = 0; i < 5; i++) {
+//         playRound();
 
-    }
+//     }
 
-}
-game();
+// }
 
 // if (playerCount > compCount) {
 //     console.log("You have beaten the computer!");
