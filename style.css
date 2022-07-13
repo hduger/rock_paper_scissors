@@ -10,6 +10,7 @@ body {
 }
 
 .header {
+    margin-bottom: 0;
     justify-content: center;
     align-items: center;
     color: lightgrey;
@@ -39,17 +40,28 @@ button {
     text-shadow: 4px 4px 6px rgb(132, 130, 241);
     font-size: 48px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     margin-left: auto;
     margin-right: auto;
     margin-top: 3rem;
-    gap: 10rem;
+    gap: 3rem;
 }
 
 .tie {
     color: lightgray;
     display: flex;
     justify-content: center;
+}
+
+#gameResults {
+    align-items: center;
+    justify-content: center;
+    color: lightgrey;
+    margin-top: 5rem;
+    font-size: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    flex: 1;
 }
