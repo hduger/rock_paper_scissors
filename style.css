@@ -47,3 +47,9 @@ button {
     margin-top: 3rem;
     gap: 10rem;
 }
+
+.tie {
+    color: lightgray;
+    display: flex;
+    justify-content: center;
+}
